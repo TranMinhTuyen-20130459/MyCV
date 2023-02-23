@@ -11,7 +11,7 @@ body {
   font-family: Helvetica, Arial, sans-serif;
 }
 
-#left {
+#left-cv {
   flex: 0.75;
   height: $h_length;
   background-color: $left_color;
@@ -32,13 +32,13 @@ body {
 
 }
 
-#right {
+#right-cv {
   flex: 2;
   height: $h_length;
   background-color: $right_color;
 }
 
-#infor-basic {
+#left-infor-basic {
 
   height: $h_div_of_id_left;
   margin-top: 30px;
@@ -79,7 +79,7 @@ body {
 
 }
 
-#profile {
+#left-profile {
 
   height: $h_div_of_id_left;
 
@@ -105,7 +105,7 @@ body {
 
 }
 
-#contact {
+#left-contact {
   height: $h_div_of_id_left;
 
   .title-header:after {
@@ -119,11 +119,11 @@ body {
 
 }
 
-#skills {
+#left-skills {
   height: $h_div_of_id_left;
 
 }
 
-#connect {
+#left-connect {
   height: $h_div_of_id_left;
 }

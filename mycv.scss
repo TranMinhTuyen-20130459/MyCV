@@ -1,20 +1,22 @@
 $left_color: #122033;
 $right_color: #e4e3e5;
 $h_length: 1500px;
+$w_length: 1100px;
 
 body {
-  /* thiết lập hiển thị các phần tử theo kiểu Flexbox. Flexbox là một kỹ thuật sắp xếp các phần tử trên trang web theo các hàng và cột linh hoạt và có thể giúp tạo ra giao diện web đáp ứng tốt trên các thiết bị khác nhau.*/
-  display: flex;
-
-  /*thiết lập kiểu phông chữ cho văn bản trên trang web. Trình duyệt sẽ sử dụng phông chữ đầu tiên trong danh sách (trong trường hợp này là Helvetica) nếu nó có sẵn trên hệ thống, nếu không thì nó sẽ sử dụng phông chữ thứ hai (Arial), và nếu cả hai phông chữ này đều không có sẵn, nó sẽ sử dụng bất kỳ phông chữ sans-serif nào mà nó có thể tìm thấy.*/
   font-family: Helvetica, Arial, sans-serif;
 }
 
-#left {
-  flex: 0.75;
-  height: $h_length;
-  background-color: $left_color;
-  color: white;
+.main {
+
+  /*  thiết lập kiểu phông chữ cho văn bản trên trang web. Trình duyệt sẽ sửx dụng phông chữ đầu tiên trong danh sách (trong trường hợp này là Helvetica) nếu nó có sẵn trên hệ thống, nếu không thì nó sẽ sử dụng phông chữ thứ hai (Arial), và nếu cả hai phông chữ này đều không có sẵn, nó sẽ sử dụng bất kỳ phông chữ sans-serif nào mà nó có thể tìm thấy. */
+  display: flex;
+  margin: 40px auto;
+  width: $w_length;
+
+  ul {
+    list-style-type: none;
+  }
 
   header {
 
@@ -26,7 +28,6 @@ body {
       position: relative; /* Thiết lập vị trí tương đối cho hình lục giác*/
       height: 50px;
       width: 43.33px; /* height * 0.866 */
-      background: white;
       box-sizing: border-box; /* Cho phép tính cả border và padding trong kích thước của hình lục giác */
       -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%); /*Thiết lập hình dạng của hình lục giác bằng cách sử dụng thuộc tính clip-path trên trình duyệt webkit */
       -moz-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%); /*Thiết lập hình dạng của hình lục giác bằng cách sử dụng thuộc tính clip-path trên trình duyệt firefox*/
@@ -37,7 +38,6 @@ body {
       display: flex;
       justify-content: center;
       align-items: center;
-      background-color: $left_color;
       top: 3px; /* Thiết lập khoảng cách từ trên xuống cho lớp nền , equal to border thickness */
       left: 3px; /* Thiết lập khoảng cách từ trái sang cho lớp nền , equal to border thickness */
       height: 44px; /* container height - (border thickness * 2) */
@@ -53,22 +53,11 @@ body {
 
   }
 
-  ul {
-
-    list-style-type: none;
-
-    li {
-      display: flex;
-      margin-bottom: 30px;
-      margin-left: -45px;
-    }
-
-  }
-
-  .content {
-    margin-top: 40px;
-    margin-left: 30px;
-    font-size: 15px;
+  header:after {
+    content: "";
+    flex: 1;
+    height: 3px;
+    margin: 6.5px 0px 6.5px 30px;
   }
 
   .avatar-icon {
@@ -80,8 +69,6 @@ body {
     position: relative; /* Thiết lập vị trí tương đối cho hình lục giác*/
     height: 45px;
     width: 38.97px; /* height * 0.866 */
-    background: rgba(255, 255, 255, 0.87);
-    color: $left_color;
     box-sizing: border-box; /* Cho phép tính cả border và padding trong kích thước của hình lục giác */
     -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%); /*Thiết lập hình dạng của hình lục giác bằng cách sử dụng thuộc tính clip-path trên trình duyệt webkit */
     -moz-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%); /*Thiết lập hình dạng của hình lục giác bằng cách sử dụng thuộc tính clip-path trên trình duyệt firefox*/
@@ -92,15 +79,143 @@ body {
     justify-content: flex-end;
   }
 
+  .uppercase {
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
 }
 
-#right {
+#left-cv {
+  flex: 1;
+  height: $h_length;
+  background-color: $left_color;
+  color: $right_color;
+
+
+  list-style-type: none;
+
+  li {
+    display: flex;
+    margin-bottom: 30px;
+    margin-left: -45px;
+  }
+
+  .content {
+    margin-top: 40px;
+    margin-left: 30px;
+    font-size: 15px;
+  }
+
+  header:after {
+    background-color: $right_color;
+  }
+
+  .avatar-icon {
+    background-color: $right_color;
+    color: $left_color;
+  }
+
+  .icon {
+    background-color: $right_color;
+  }
+
+  .icon-background {
+    background-color: $left_color;
+  }
+
+}
+
+#right-cv {
+
   flex: 2;
   height: $h_length;
   background-color: $right_color;
+  color: $left_color;
+
+  .header-right {
+    margin-top: 40px;
+  }
+
+  /* các thẻ div có class là content trong tất cả các thẻ div con của vùng bên phải CV */
+  .content {
+    margin-left: 20px;
+  }
+
+  header:after {
+    background-color: $left_color;
+  }
+
+  .avatar-icon {
+    background-color: $right_color;
+    color: $left_color;
+  }
+
+  .icon {
+    background-color: $left_color;
+  }
+
+  .icon-background {
+    background-color: $right_color;
+  }
+
+  .infor-skill {
+    margin-left: -18px;
+    margin-bottom: 12px;
+  }
+
+  .infor-skill:before {
+    content: "";
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 20px;
+    margin-top: 4px;
+    background-color: $left_color;
+  }
+
+  .name-skill {
+    justify-content: flex-end;
+  }
+
+  .status-skill {
+    justify-content: flex-end;
+    width: 150px;
+    height: 10px;
+    border-radius: 10px;
+    margin-top: 3px;
+    margin-left: 20px;
+    background-color: $right_color;
+    border: 3px solid $left_color;
+  }
+
+  .infor-skill {
+    display: flex;
+  }
+
+  .content {
+    display: flex;
+  }
+
+  span:before {
+    content: "";
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: $left_color;
+    margin-left: -18px;
+    margin-right: 15px;
+  }
+
+  p{
+    margin-left: 10px;
+  }
+
 }
 
-#infor-basic {
+#left-infor-basic {
 
   height: 15%;
   margin-top: 30px;
@@ -141,20 +256,11 @@ body {
 
 }
 
-#profile {
+#left-profile {
 
   height: 15%;
 
   margin-top: 80px;
-
-  header:after {
-    content: "";
-    display: inline-block;
-    height: 3px;
-    width: calc(100% - 40px - 7px - 20px - 102.7px - 10px);
-    margin: 6.5px 0px 6.5px 30px;
-    background-color: #ffffff;
-  }
 
   p {
 
@@ -170,31 +276,15 @@ body {
   }
 }
 
-#contact {
+#left-contact {
   height: 25%;
 
-  header:after {
-    content: "";
-    display: inline-block;
-    height: 3px;
-    width: calc(100% - 40px - 7px - 20px - 102.7px - 45px);
-    margin: 6.5px 0px 6.5px 30px;
-    background-color: #ffffff;
-  }
 }
 
-#skills {
+#left-skills {
   height: 20%;
   margin-top: -50px;
 
-  header:after {
-    content: "";
-    display: inline-block;
-    height: 3px;
-    width: calc(100% - 40px - 7px - 20px - 102.7px - 85px);
-    margin: 6.5px 0px 6.5px 30px;
-    background-color: #ffffff;
-  }
 
   .content {
     margin-top: 25px;
@@ -229,20 +319,28 @@ body {
     border-radius: 10px;
     margin-top: 5px;
     margin-left: 80px;
+    border: 3px solid $right_color;
   }
 
 }
 
-#connect {
+#left-connect {
   height: 15%;
   margin-top: -50px;
+}
 
-  header:after {
-    content: "";
-    display: inline-block;
-    height: 3px;
-    width: calc(100% - 40px - 7px - 20px - 102.7px - 20px);
-    margin: 6.5px 0px 6.5px 30px;
-    background-color: #ffffff;
-  }
+#right-work-experience {
+
+}
+
+#right-professional-skills {
+
+}
+
+#right-education {
+
+}
+
+#right-proficiency {
+
 }

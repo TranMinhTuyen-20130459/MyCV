@@ -1,37 +1,35 @@
 @charset "UTF-8";
 body {
-  /* thiết lập hiển thị các phần tử theo kiểu Flexbox. Flexbox là một kỹ thuật sắp xếp các phần tử trên trang web theo các hàng và cột linh hoạt và có thể giúp tạo ra giao diện web đáp ứng tốt trên các thiết bị khác nhau.*/
-  display: flex;
-  /*thiết lập kiểu phông chữ cho văn bản trên trang web. Trình duyệt sẽ sử dụng phông chữ đầu tiên trong danh sách (trong trường hợp này là Helvetica) nếu nó có sẵn trên hệ thống, nếu không thì nó sẽ sử dụng phông chữ thứ hai (Arial), và nếu cả hai phông chữ này đều không có sẵn, nó sẽ sử dụng bất kỳ phông chữ sans-serif nào mà nó có thể tìm thấy.*/
   font-family: Helvetica, Arial, sans-serif;
 }
 
-#left {
-  flex: 0.75;
-  height: 1500px;
-  background-color: #122033;
-  color: white;
+.main {
+  /*  thiết lập kiểu phông chữ cho văn bản trên trang web. Trình duyệt sẽ sửx dụng phông chữ đầu tiên trong danh sách (trong trường hợp này là Helvetica) nếu nó có sẵn trên hệ thống, nếu không thì nó sẽ sử dụng phông chữ thứ hai (Arial), và nếu cả hai phông chữ này đều không có sẵn, nó sẽ sử dụng bất kỳ phông chữ sans-serif nào mà nó có thể tìm thấy. */
+  display: flex;
+  margin: 40px auto;
+  width: 1100px;
 }
-#left header {
+.main ul {
+  list-style-type: none;
+}
+.main header {
   display: flex;
 }
-#left header .icon {
+.main header .icon {
   justify-content: flex-start;
   margin: -15px 0px 10px 25px;
   position: relative; /* Thiết lập vị trí tương đối cho hình lục giác*/
   height: 50px;
   width: 43.33px; /* height * 0.866 */
-  background: white;
   box-sizing: border-box; /* Cho phép tính cả border và padding trong kích thước của hình lục giác */
   -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%); /*Thiết lập hình dạng của hình lục giác bằng cách sử dụng thuộc tính clip-path trên trình duyệt webkit */
   -moz-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%); /*Thiết lập hình dạng của hình lục giác bằng cách sử dụng thuộc tính clip-path trên trình duyệt firefox*/
 }
-#left header .icon-background {
+.main header .icon-background {
   position: absolute; /* Thiết lập vị trí tuyệt đối cho lớp nền của hình lục giác */
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #122033;
   top: 3px; /* Thiết lập khoảng cách từ trên xuống cho lớp nền , equal to border thickness */
   left: 3px; /* Thiết lập khoảng cách từ trái sang cho lớp nền , equal to border thickness */
   height: 44px; /* container height - (border thickness * 2) */
@@ -39,24 +37,17 @@ body {
   -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%); /*Thiết lập hình dạng của hình lục giác bằng cách sử dụng thuộc tính clip-path trên trình duyệt webkit */
   -moz-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%); /*Thiết lập hình dạng của hình lục giác bằng cách sử dụng thuộc tính clip-path trên trình duyệt firefox*/
 }
-#left header .title-header {
+.main header .title-header {
   justify-content: center;
   margin-left: 10px;
 }
-#left ul {
-  list-style-type: none;
+.main header:after {
+  content: "";
+  flex: 1;
+  height: 3px;
+  margin: 6.5px 0px 6.5px 30px;
 }
-#left ul li {
-  display: flex;
-  margin-bottom: 30px;
-  margin-left: -45px;
-}
-#left .content {
-  margin-top: 40px;
-  margin-left: 30px;
-  font-size: 15px;
-}
-#left .avatar-icon {
+.main .avatar-icon {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -64,27 +55,127 @@ body {
   position: relative; /* Thiết lập vị trí tương đối cho hình lục giác*/
   height: 45px;
   width: 38.97px; /* height * 0.866 */
-  background: rgba(255, 255, 255, 0.87);
-  color: #122033;
   box-sizing: border-box; /* Cho phép tính cả border và padding trong kích thước của hình lục giác */
   -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%); /*Thiết lập hình dạng của hình lục giác bằng cách sử dụng thuộc tính clip-path trên trình duyệt webkit */
   -moz-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%); /*Thiết lập hình dạng của hình lục giác bằng cách sử dụng thuộc tính clip-path trên trình duyệt firefox*/
 }
-#left .infor-detail-avatar-icon {
+.main .infor-detail-avatar-icon {
   justify-content: flex-end;
 }
+.main .uppercase {
+  font-weight: bold;
+  text-transform: uppercase;
+}
 
-#right {
+#left-cv {
+  flex: 1;
+  height: 1500px;
+  background-color: #122033;
+  color: #e4e3e5;
+  list-style-type: none;
+}
+#left-cv li {
+  display: flex;
+  margin-bottom: 30px;
+  margin-left: -45px;
+}
+#left-cv .content {
+  margin-top: 40px;
+  margin-left: 30px;
+  font-size: 15px;
+}
+#left-cv header:after {
+  background-color: #e4e3e5;
+}
+#left-cv .avatar-icon {
+  background-color: #e4e3e5;
+  color: #122033;
+}
+#left-cv .icon {
+  background-color: #e4e3e5;
+}
+#left-cv .icon-background {
+  background-color: #122033;
+}
+
+#right-cv {
   flex: 2;
   height: 1500px;
   background-color: #e4e3e5;
+  color: #122033;
+  /* các thẻ div có class là content trong tất cả các thẻ div con của vùng bên phải CV */
+}
+#right-cv .header-right {
+  margin-top: 40px;
+}
+#right-cv .content {
+  margin-left: 20px;
+}
+#right-cv header:after {
+  background-color: #122033;
+}
+#right-cv .avatar-icon {
+  background-color: #e4e3e5;
+  color: #122033;
+}
+#right-cv .icon {
+  background-color: #122033;
+}
+#right-cv .icon-background {
+  background-color: #e4e3e5;
+}
+#right-cv .infor-skill {
+  margin-left: -18px;
+  margin-bottom: 12px;
+}
+#right-cv .infor-skill:before {
+  content: "";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 20px;
+  margin-top: 4px;
+  background-color: #122033;
+}
+#right-cv .name-skill {
+  justify-content: flex-end;
+}
+#right-cv .status-skill {
+  justify-content: flex-end;
+  width: 150px;
+  height: 10px;
+  border-radius: 10px;
+  margin-top: 3px;
+  margin-left: 20px;
+  background-color: #e4e3e5;
+  border: 3px solid #122033;
+}
+#right-cv .infor-skill {
+  display: flex;
+}
+#right-cv .content {
+  display: flex;
+}
+#right-cv span:before {
+  content: "";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #122033;
+  margin-left: -18px;
+  margin-right: 15px;
+}
+#right-cv p {
+  margin-left: 10px;
 }
 
-#infor-basic {
+#left-infor-basic {
   height: 15%;
   margin-top: 30px;
 }
-#infor-basic .hex-avatar {
+#left-infor-basic .hex-avatar {
   display: block;
   margin: 0 auto; /* Canh giữa hình lục giác */
   position: relative; /* Thiết lập vị trí tương đối cho hình lục giác*/
@@ -95,7 +186,7 @@ body {
   -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%); /*Thiết lập hình dạng của hình lục giác bằng cách sử dụng thuộc tính clip-path trên trình duyệt webkit */
   -moz-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%); /*Thiết lập hình dạng của hình lục giác bằng cách sử dụng thuộc tính clip-path trên trình duyệt firefox*/
 }
-#infor-basic .hex-avatar-background {
+#left-infor-basic .hex-avatar-background {
   position: absolute; /*Thiết lập vị trí tuyệt đối cho lớp nền của hình lục giác*/
   background-color: orange;
   top: 2px; /* Thiết lập khoảng cách từ trên xuống cho lớp nền , equal to border thickness */
@@ -105,71 +196,47 @@ body {
   -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%); /*Thiết lập hình dạng của hình lục giác bằng cách sử dụng thuộc tính clip-path trên trình duyệt webkit */
   -moz-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%); /*Thiết lập hình dạng của hình lục giác bằng cách sử dụng thuộc tính clip-path trên trình duyệt firefox*/
 }
-#infor-basic .hex-avatar-background img {
+#left-infor-basic .hex-avatar-background img {
   width: 100%;
   height: 100%;
   object-fit: cover; /* Giữ tỷ lệ của ảnh */
 }
-#infor-basic .text-infor {
+#left-infor-basic .text-infor {
   text-align: center;
 }
 
-#profile {
+#left-profile {
   height: 15%;
   margin-top: 80px;
 }
-#profile header:after {
-  content: "";
-  display: inline-block;
-  height: 3px;
-  width: calc(100% - 40px - 7px - 20px - 102.7px - 10px);
-  margin: 6.5px 0px 6.5px 30px;
-  background-color: #ffffff;
-}
-#profile p {
+#left-profile p {
   margin-top: -20px;
   margin-left: 10px;
   font-family: Arial;
   font-size: 15px;
 }
-#profile p strong {
+#left-profile p strong {
   font-size: 18px;
 }
 
-#contact {
+#left-contact {
   height: 25%;
 }
-#contact header:after {
-  content: "";
-  display: inline-block;
-  height: 3px;
-  width: calc(100% - 40px - 7px - 20px - 102.7px - 45px);
-  margin: 6.5px 0px 6.5px 30px;
-  background-color: #ffffff;
-}
 
-#skills {
+#left-skills {
   height: 20%;
   margin-top: -50px;
 }
-#skills header:after {
-  content: "";
-  display: inline-block;
-  height: 3px;
-  width: calc(100% - 40px - 7px - 20px - 102.7px - 85px);
-  margin: 6.5px 0px 6.5px 30px;
-  background-color: #ffffff;
-}
-#skills .content {
+#left-skills .content {
   margin-top: 25px;
 }
-#skills .infor-skill {
+#left-skills .infor-skill {
   display: flex;
   margin-top: 10px;
   margin-left: 10px;
   margin-right: 10px;
 }
-#skills .name-skill:before {
+#left-skills .name-skill:before {
   content: "";
   display: inline-block;
   width: 10px;
@@ -178,30 +245,23 @@ body {
   margin-right: 40px;
   background-color: #ffffff;
 }
-#skills .name-skill {
+#left-skills .name-skill {
   justify-content: flex-start;
   min-width: 100px;
 }
-#skills .status-skill {
+#left-skills .status-skill {
   justify-content: flex-end;
   width: 125px;
   height: 10px;
   border-radius: 10px;
   margin-top: 5px;
   margin-left: 80px;
+  border: 3px solid #e4e3e5;
 }
 
-#connect {
+#left-connect {
   height: 15%;
   margin-top: -50px;
-}
-#connect header:after {
-  content: "";
-  display: inline-block;
-  height: 3px;
-  width: calc(100% - 40px - 7px - 20px - 102.7px - 20px);
-  margin: 6.5px 0px 6.5px 30px;
-  background-color: #ffffff;
 }
 
 /*# sourceMappingURL=mycv.css.map */
