@@ -1,15 +1,16 @@
 $left_color: #122033;
 $right_color: #e4e3e5;
 $h_length: 1500px;
-$w_length: 1100px;
+$w_length: 1200px;
 
 body {
+  /*  thiết lập kiểu phông chữ cho văn bản trên trang web. Trình duyệt sẽ sửx dụng phông chữ đầu tiên trong danh sách (trong trường hợp này là Helvetica) nếu nó có sẵn trên hệ thống, nếu không thì nó sẽ sử dụng phông chữ thứ hai (Arial), và nếu cả hai phông chữ này đều không có sẵn, nó sẽ sử dụng bất kỳ phông chữ sans-serif nào mà nó có thể tìm thấy. */
   font-family: Helvetica, Arial, sans-serif;
+  font-size: 90%;
 }
 
 .main {
 
-  /*  thiết lập kiểu phông chữ cho văn bản trên trang web. Trình duyệt sẽ sửx dụng phông chữ đầu tiên trong danh sách (trong trường hợp này là Helvetica) nếu nó có sẵn trên hệ thống, nếu không thì nó sẽ sử dụng phông chữ thứ hai (Arial), và nếu cả hai phông chữ này đều không có sẵn, nó sẽ sử dụng bất kỳ phông chữ sans-serif nào mà nó có thể tìm thấy. */
   display: flex;
   margin: 40px auto;
   width: $w_length;
@@ -171,12 +172,13 @@ body {
     height: 10px;
     border-radius: 50%;
     margin-right: 20px;
-    margin-top: 4px;
+    margin-top: 2px;
     background-color: $left_color;
   }
 
   .name-skill {
     justify-content: flex-end;
+    min-width: 140px;
   }
 
   .status-skill {
@@ -184,7 +186,7 @@ body {
     width: 150px;
     height: 10px;
     border-radius: 10px;
-    margin-top: 3px;
+    margin-top: -2px;
     margin-left: 20px;
     background-color: $right_color;
     border: 3px solid $left_color;
@@ -209,7 +211,7 @@ body {
     margin-right: 15px;
   }
 
-  p{
+  p {
     margin-left: 10px;
   }
 
@@ -274,11 +276,11 @@ body {
     font-size: 15px;
 
   }
+
 }
 
 #left-contact {
   height: 25%;
-
 }
 
 #left-skills {
@@ -292,7 +294,7 @@ body {
 
   .infor-skill {
     display: flex;
-    margin-top: 10px;
+    margin-top: 15px;
     margin-left: 10px;
     margin-right: 10px;
   }
@@ -309,7 +311,7 @@ body {
 
   .name-skill {
     justify-content: flex-start;
-    min-width: 100px;
+    min-width: 145px;
   }
 
   .status-skill {
@@ -317,8 +319,8 @@ body {
     width: 125px;
     height: 10px;
     border-radius: 10px;
-    margin-top: 5px;
-    margin-left: 80px;
+    margin-bottom: 5px;
+    margin-left: 100px;
     border: 3px solid $right_color;
   }
 
